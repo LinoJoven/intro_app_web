@@ -19,14 +19,6 @@ header {
     border-bottom: 1px solid #e9ecef; /* Un sutil borde inferior para separar de la nav */
 }
 
-.logo-empresa {
-    height: 60px; /* Ajusta la altura del logo. Prueba con 60px o 70px. */
-    width: auto;   /* Mantiene la proporción de la imagen. ¡Esencial! */
-    display: block; /* Asegura que se comporte como un bloque para márgenes */
-    margin-right: 15px; /* Margen a la derecha para separar del texto del título */
-}
-
-
 
 nav a.nav-link { /* Selecciona los enlaces de la nueva navbar */
     color: #ffffff; /* Color de texto blanco por defecto */
