@@ -1,1 +1,225 @@
-#map { height: 80%; }
+#map { height: 60%; }
+
+
+
+/* /static/css/estilos.css */
+
+/* Estilos generales del cuerpo de la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Un gris muy claro para el fondo */
+    color: #343a40;
+    line-height: 1.6;
+}
+
+/* --- CABECERA (Página Principal) --- */
+header {
+    border-bottom: 1px solid #e9ecef; /* Un sutil borde inferior para separar de la nav */
+}
+
+.logo-empresa {
+    height: 60px; /* Ajusta la altura del logo. Prueba con 60px o 70px. */
+    width: auto;   /* Mantiene la proporción de la imagen. ¡Esencial! */
+    display: block; /* Asegura que se comporte como un bloque para márgenes */
+    margin-right: 15px; /* Margen a la derecha para separar del texto del título */
+}
+
+
+
+nav a.nav-link { /* Selecciona los enlaces de la nueva navbar */
+    color: #ffffff; /* Color de texto blanco por defecto */
+    text-decoration: none;
+    padding: 8px 15px; /* Añade un poco más de padding horizontal */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transición para color y fondo */
+    border-radius: 5px; /* Bordes ligeramente redondeados para los enlaces */
+}
+
+nav a.nav-link:hover {
+    color: #cfe2ff; /* Color un poco más claro al pasar el ratón */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil al pasar el ratón */
+}
+
+nav .nav-link.active {
+    font-weight: bold; /* Hace el texto más negrita */
+    color: #ffffff !important; /* Asegura que el texto activo sea blanco */
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo para el elemento activo */
+    border-bottom: none; /* Elimina la línea inferior si no la quieres con el fondo */
+}
+
+
+/* --- CONTENIDO PRINCIPAL (MAIN) --- */
+main {
+    background-color: #ffffff; /* Fondo blanco para el contenido */
+    padding: 30px; /* Aumenta el padding interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada para profundidad */
+    margin-top: 20px; /* Margen superior si no usas my-4 de Bootstrap */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.img-fluid {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    display: block;  /* Para centrarla o aplicar márgenes correctamente */
+    margin: 25px auto; /* Centra la imagen y le da más espacio vertical */
+    border-radius: 6px; /* Bordes ligeramente redondeados para la imagen del main */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil para la imagen */
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+    background-color: #e9ecef; /* Un gris un poco más oscuro que el fondo del body */
+    font-size: 0.85em; /* Un poco más grande que 0.8em */
+    color: #6c757d;    /* Color de texto gris */
+    padding: 15px 0;   /* Aumenta el padding para que se vea mejor */
+    border-top: 1px solid #dee2e6; /* Borde superior para separar del main */
+    margin-top: 30px; /* Margen superior para separarlo del main */
+}
+
+/* --- CABECERA (página de registro) --- */
+header.bg-primary {
+    background-color: #2c7257 !important; /* Azul primario de Bootstrap */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* --- MAIN (Contenido principal de la página de registro) --- */
+main.container {
+    background-color: transparent; /* El main no tiene fondo blanco, los cards sí */
+    padding: 20px 0; /* padding vertical */
+}
+
+/* Estilos para el contenedor del mapa */
+#map {
+    height: 450px; /* Altura fija para el mapa */
+    width: 100%;
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+}
+
+/* Contenedor del mapa para asegurar que el mapa se estire */
+.map-container {
+    height: 450px; /* Misma altura que #map */
+    overflow: hidden; /* Oculta cualquier desbordamiento si el mapa no encaja perfecto */
+    border-radius: 8px; /* Mantiene los bordes redondeados del padre */
+}
+
+
+/* Estilos para los "cards" de Bootstrap */
+.card {
+    border: none; /* Quitamos el borde por defecto */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+}
+
+.card-header {
+    font-weight: bold;
+    font-size: 1.1em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-header.bg-info {
+    background-color: #128517 !important; /* Azul-verdoso de Bootstrap info */
+}
+
+.card-header.bg-success {
+    background-color: #28a745 !important; /* Verde de Bootstrap success */
+}
+
+
+/* Estilos para los formularios */
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: .25rem; /* Pequeño margen bajo la etiqueta */
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: .6rem .75rem;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+    background-color: #e9ecef; /* Un gris un poco más oscuro que el fondo del body */
+    font-size: 0.85em;
+    color: #6c757d;
+    padding: 15px 0;
+    border-top: 1px solid #dee2e6;
+    margin-top: 30px;
+}
+
+/* Estilos de la página principal (index.html) - Mantén estos si los usas ahí */
+.logo-empresa {
+    height: 60px; /* Ajusta la altura del logo según necesites */
+    width: auto;   /* Mantiene la proporción del logo */
+    display: block; 
+    margin-right: 15px; /* Margen a la derecha para separar del texto del título */
+}
+
+/* Estilos para imágenes fluidas en el main de la página principal */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos de navegación de la página principal */
+nav.navbar-dark {
+    background-color: #6c757d !important; /* Color secundario de Bootstrap */
+}
+
+nav ul.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li.nav-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+nav a.nav-link:hover {
+    color: #cfe2ff;
+}
+
+nav .nav-link.active {
+    font-weight: bold;
+    color: #ffffff !important;
+    border-bottom: 2px solid #ffffff;
+}

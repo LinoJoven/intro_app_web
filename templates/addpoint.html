@@ -1,50 +1,99 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de animales</title>
+    <title>BioGuardian - Registro de Animales</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+          
+    <link rel="stylesheet" href="/static/css/estilos.css">
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-     <link rel="stylesheet" href="estilos.css">
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-    
 <body>
-     <div id="map"></div>
-      <form action="">
-        <label for="nombre">ID</label>
-        <input type="text" name="nombre" id="nombre">
+    <header class="bg-primary text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0">BioGuardian - Registro de Animales</h1>
+            <a href="index.html" class="btn btn-outline-light btn-sm">Volver al inicio</a>
+        </div>
+    </header>
 
-        <label for="nombre">Especie</label>
-        <input type="text" name="nombre" id="nombre">
+    <main class="container my-4">
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-info text-white">Ubicación del Animal</div>
+                    <div class="card-body p-0">
+                        <div id="map" class="map-container"></div>
+                    </div>
+                </div>
+            </div>
 
-        <label for="nombre">Animal</label>
-        <input type="text" name="nombre" id="nombre">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-success text-white">Datos del Animal</div>
+                    <div class="card-body">
+                        <form id="animalForm">
+                            <div class="mb-3">
+                                <label for="animalId" class="form-label">ID</label>
+                                <input type="text" class="form-control" id="animalId" name="animalId">
+                            </div>
 
+                            <div class="mb-3">
+                                <label for="especie" class="form-label">Especie</label>
+                                <input type="text" class="form-control" id="especie" name="especie">
+                            </div>
 
-        <label for="nombre">Cantidad de animales</label>
-        <input type="text" name="nombre" id="nombre">
+                            <div class="mb-3">
+                                <label for="nombreAnimal" class="form-label">Nombre del Animal</label>
+                                <input type="text" class="form-control" id="nombreAnimal" name="nombreAnimal">
+                            </div>
 
-        <label for="nombre">Habitat</label>
-        <input type="text" name="nombre" id="nombre">
+                            <div class="mb-3">
+                                <label for="cantidad" class="form-label">Cantidad de animales</label>
+                                <input type="number" class="form-control" id="cantidad" name="cantidad" min="1">
+                            </div>
 
-        <label for="nombre">Alimentación</label>
-        <input type="text" name="nombre" id="nombre">
+                            <div class="mb-3">
+                                <label for="habitat" class="form-label">Hábitat</label>
+                                <input type="text" class="form-control" id="habitat" name="habitat">
+                            </div>
 
-         <button type="submit" class="btn btn-primary">Submit</button>
-        
-     <div id="formulario">
+                            <div class="mb-3">
+                                <label for="alimentacion" class="form-label">Alimentación</label>
+                                <input type="text" class="form-control" id="alimentacion" name="alimentacion">
+                            </div>
 
+                            <div class="mb-3">
+                                <label for="latitud" class="form-label">Latitud</label>
+                                <input type="text" class="form-control" id="latitud" name="latitud" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="longitud" class="form-label">Longitud</label>
+                                <input type="text" class="form-control" id="longitud" name="longitud" readonly>
+                            </div>
 
+                            <button type="submit" class="btn btn-primary w-100">Registrar Animal</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-     </div>
-     <script src="programa.js"></script>
+    <footer class="bg-light text-center py-3">
+        <p class="mb-0 text-muted">BioGuardian © 2025. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
-    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+            
+    <script src="/static/js/programa.js"></script>
 </body>
 </html>
