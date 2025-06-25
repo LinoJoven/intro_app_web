@@ -1,217 +1,445 @@
 #map { height: 60%; }
-
-
-
 /* /static/css/estilos.css */
+
+/* Google Fonts - Import Poppins for general text and Montserrat for headings */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
 
 /* Estilos generales del cuerpo de la página */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    font-family: 'Poppins', sans-serif; /* Poppins for body text */
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* Un gris muy claro para el fondo */
-    color: #343a40;
-    line-height: 1.6;
+    background-color: #F8F9FA; /* A very light, almost white background */
+    color: #343a40; /* Darker text for better contrast */
+    line-height: 1.8; /* Increased line height for readability */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    /* Subtle diagonal line pattern for a modern touch */
+    background-image: linear-gradient(45deg, #f0f2f5 25%, transparent 25%, transparent 75%, #f0f2f5 75%, #f0f2f5),
+                      linear-gradient(45deg, #f0f2f5 25%, transparent 25%, transparent 75%, #f0f2f5 75%, #f0f2f5);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* Base styles for all sections for consistent padding and margin */
+section {
+    padding: 60px 0;
 }
 
 /* --- CABECERA (Página Principal) --- */
 header {
-    border-bottom: 1px solid #e9ecef; /* Un sutil borde inferior para separar de la nav */
+    background-color: #ffffff; /* White header for a clean look */
+    border-bottom: 1px solid #e9ecef; /* Subtle border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Stronger, softer shadow for depth */
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000; /* Ensure header stays on top */
+    transition: all 0.3s ease-in-out;
 }
 
-
-nav a.nav-link { /* Selecciona los enlaces de la nueva navbar */
-    color: #ffffff; /* Color de texto blanco por defecto */
-    text-decoration: none;
-    padding: 8px 15px; /* Añade un poco más de padding horizontal */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Transición para color y fondo */
-    border-radius: 5px; /* Bordes ligeramente redondeados para los enlaces */
+header .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-nav a.nav-link:hover {
-    color: #cfe2ff; /* Color un poco más claro al pasar el ratón */
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil al pasar el ratón */
-}
-
-nav .nav-link.active {
-    font-weight: bold; /* Hace el texto más negrita */
-    color: #ffffff !important; /* Asegura que el texto activo sea blanco */
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo para el elemento activo */
-    border-bottom: none; /* Elimina la línea inferior si no la quieres con el fondo */
-}
-
-
-/* --- CONTENIDO PRINCIPAL (MAIN) --- */
-main {
-    background-color: #ffffff; /* Fondo blanco para el contenido */
-    padding: 30px; /* Aumenta el padding interno */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada para profundidad */
-    margin-top: 20px; /* Margen superior si no usas my-4 de Bootstrap */
-    margin-bottom: 20px; /* Margen inferior */
-}
-
-.img-fluid {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
-    height: auto;    /* Mantiene la proporción de la imagen */
-    display: block;  /* Para centrarla o aplicar márgenes correctamente */
-    margin: 25px auto; /* Centra la imagen y le da más espacio vertical */
-    border-radius: 6px; /* Bordes ligeramente redondeados para la imagen del main */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil para la imagen */
-}
-
-/* --- PIE DE PÁGINA --- */
-footer {
-    background-color: #e9ecef; /* Un gris un poco más oscuro que el fondo del body */
-    font-size: 0.85em; /* Un poco más grande que 0.8em */
-    color: #6c757d;    /* Color de texto gris */
-    padding: 15px 0;   /* Aumenta el padding para que se vea mejor */
-    border-top: 1px solid #dee2e6; /* Borde superior para separar del main */
-    margin-top: 30px; /* Margen superior para separarlo del main */
-}
-
-/* --- CABECERA (página de registro) --- */
-header.bg-primary {
-    background-color: #2c7257 !important; /* Azul primario de Bootstrap */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+header h1, header p {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for headings */
+    color: #212529; /* Darker shade for text */
+    margin-bottom: 0;
 }
 
 header h1 {
-    color: #ffffff;
+    font-weight: 700; /* Bolder title */
+    font-size: 2.2rem;
+}
+
+header p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.logo-empresa {
+    height: 80px; /* Slightly larger logo */
+    width: auto;
+    display: block;
+    margin-right: 25px; /* More space */
+    border-radius: 50%; /* Make logo round */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for logo */
+}
+
+/* --- Navigation Bar (Both Pages) --- */
+nav.navbar-dark {
+    background-color: #1a4d2e !important; /* Deep Forest Green for navigation */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.8rem 0;
+}
+
+nav a.nav-link {
+    color: #e8f5e9; /* Lighter green-white */
+    font-family: 'Montserrat', sans-serif; /* Montserrat for nav links */
     font-weight: 500;
+    text-decoration: none;
+    padding: 14px 22px; /* Increased padding */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* More sophisticated transition */
+    border-radius: 8px;
+    margin: 0 8px; /* Spacing between links */
+    position: relative;
+    overflow: hidden;
+}
+
+nav a.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 0;
+}
+
+nav a.nav-link:hover::before {
+    transform: translateX(0);
+}
+
+nav a.nav-link:hover {
+    color: #ffffff; /* White on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+nav .nav-link.active {
+    font-weight: 700; /* Bolder active link */
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.2); /* More pronounced active background */
+    border-bottom: none;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2); /* Inner shadow for active state */
+    transform: translateY(-2px);
+}
+
+/* --- CONTENIDO PRINCIPAL (MAIN) - Index Page --- */
+main {
+    background-color: #ffffff;
+    padding: 50px; /* More padding */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden; /* For pseudo-element background */
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxIiBmaWxsPSIjRjBGNEY1Ii8+PC9zdmc+');
+    background-repeat: repeat;
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+main > * { /* Ensure content is above the pseudo-element */
+    position: relative;
+    z-index: 1;
+}
+
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 40px auto; /* More vertical space */
+    border-radius: 12px; /* Consistent rounding */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Clearer shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+main p {
+    font-size: 1.1em; /* Slightly larger text */
+    color: #495057; /* Slightly lighter body text */
+    text-align: justify; /* Justify text for a cleaner look */
+}
+
+small.text-muted {
+    font-style: italic;
+    color: #888 !important;
+    display: block;
+    text-align: center;
+    margin-top: -20px; /* Pull it up slightly closer to the image */
+    font-size: 0.9em;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #212529; /* Darker footer */
+    color: #e0e0e0; /* Lighter text */
+    font-size: 0.9em;
+    padding: 30px 0; /* More padding */
+    border-top: 1px solid #343a40;
+    margin-top: 50px;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+footer .author-info {
+    font-size: 0.85em;
+    color: #b0b0b0;
+    margin-top: 10px;
+}
+
+
+/* --- CABECERA (página de registro - addpoint.html) --- */
+header.bg-primary {
+    background-color: #1a4d2e !important; /* Deep Forest Green for register page header */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    padding: 20px 0;
+}
+
+header.bg-primary h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+header .btn-outline-light {
+    border-color: #ffffff;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    padding: 8px 18px;
+    border-radius: 6px;
+}
+
+header .btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #1a4d2e; /* Teal on hover */
+    transform: translateY(-2px);
 }
 
 /* --- MAIN (Contenido principal de la página de registro) --- */
 main.container {
-    background-color: transparent; /* El main no tiene fondo blanco, los cards sí */
-    padding: 20px 0; /* padding vertical */
+    background-color: transparent; /* The main container itself remains transparent */
+    padding: 40px 0; /* Increased vertical padding */
 }
 
 /* Estilos para el contenedor del mapa */
 #map {
-    height: 450px; /* Altura fija para el mapa */
+    height: 550px; /* Increased map height for better visibility */
     width: 100%;
-    border-radius: 8px; /* Bordes ligeramente redondeados */
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+    border-radius: 15px; /* More rounded map corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Clearer shadow */
+    border: 2px solid #e0f2f7; /* Subtle border around map */
+    transition: all 0.3s ease-in-out;
 }
 
-/* Contenedor del mapa para asegurar que el mapa se estire */
+#map:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
 .map-container {
-    height: 450px; /* Misma altura que #map */
-    overflow: hidden; /* Oculta cualquier desbordamiento si el mapa no encaja perfecto */
-    border-radius: 8px; /* Mantiene los bordes redondeados del padre */
+    height: 550px; /* Match map height */
+    overflow: hidden;
+    border-radius: 15px;
 }
-
 
 /* Estilos para los "cards" de Bootstrap */
 .card {
-    border: none; /* Quitamos el borde por defecto */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+    border: none;
+    border-radius: 15px; /* More rounded card corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Consistent, softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+    overflow: hidden; /* For internal elements if any */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* More pronounced lift on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .card-header {
-    font-weight: bold;
-    font-size: 1.1em;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.3em; /* Slightly larger header text */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 18px 25px; /* More padding */
+    position: relative; /* For potential background effects */
+    overflow: hidden;
 }
 
+.card-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+
 .card-header.bg-info {
-    background-color: #128517 !important; /* Azul-verdoso de Bootstrap info */
+    background-color: #2e7d32 !important; /* Slightly lighter Forest Green for map card header */
+    color: #ffffff;
 }
 
 .card-header.bg-success {
-    background-color: #28a745 !important; /* Verde de Bootstrap success */
+    background-color: #1a4d2e !important; /* Deep Forest Green for form card header */
+    color: #ffffff;
+}
+
+.card-body {
+    padding: 30px; /* More padding inside card body */
 }
 
 
 /* Estilos para los formularios */
 .form-label {
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    color: #495057;
-    margin-bottom: .25rem; /* Pequeño margen bajo la etiqueta */
+    color: #343a40; /* Darker label color */
+    margin-bottom: .6rem; /* More space below label */
+    display: block; /* Ensure label takes full width */
 }
 
 .form-control {
-    border-radius: 5px;
+    border-radius: 10px; /* More rounded input fields */
     border: 1px solid #ced4da;
-    padding: .6rem .75rem;
+    padding: .85rem 1.1rem; /* More padding inside inputs */
+    font-size: 1.05em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f8f9fa; /* Light background for inputs */
 }
 
 .form-control:focus {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: #1a4d2e; /* Deep Forest Green focus border */
+    box-shadow: 0 0 0 0.25rem rgba(26, 77, 46, 0.3); /* Deep Forest Green focus shadow */
+    background-color: #ffffff;
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    background-color: #1a4d2e; /* Deep Forest Green button */
+    border-color: #1a4d2e;
+    padding: .9rem 1.5rem; /* Larger button padding */
+    font-size: 1.2em;
+    border-radius: 10px; /* Rounded button */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #0f331d; /* Darker Forest Green on hover */
+    border-color: #0f331d;
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
 }
 
-/* --- PIE DE PÁGINA --- */
-footer {
-    background-color: #e9ecef; /* Un gris un poco más oscuro que el fondo del body */
-    font-size: 0.85em;
-    color: #6c757d;
-    padding: 15px 0;
-    border-top: 1px solid #dee2e6;
-    margin-top: 30px;
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    main {
+        padding: 40px;
+    }
+    #map, .map-container {
+        height: 500px;
+    }
 }
 
-/* Estilos de la página principal (index.html) - Mantén estos si los usas ahí */
-.logo-empresa {
-    height: 60px; /* Ajusta la altura del logo según necesites */
-    width: auto;   /* Mantiene la proporción del logo */
-    display: block; 
-    margin-right: 15px; /* Margen a la derecha para separar del texto del título */
+@media (max-width: 991.98px) {
+    #map, .map-container {
+        height: 450px; /* Slightly reduce map height on smaller screens */
+    }
+    main {
+        padding: 30px;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .logo-empresa {
+        height: 60px;
+    }
+    .card-header {
+        font-size: 1.2em;
+    }
+    .card-body {
+        padding: 25px;
+    }
 }
 
-/* Estilos para imágenes fluidas en el main de la página principal */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 25px auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+@media (max-width: 767.98px) {
+    #map, .map-container {
+        height: 400px; /* Further reduce map height on small screens */
+    }
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .logo-empresa {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    nav .navbar-nav {
+        text-align: center;
+    }
+    nav a.nav-link {
+        margin: 5px auto;
+    }
+    main {
+        padding: 25px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .img-fluid {
+        margin: 30px auto;
+    }
+    .card-header {
+        font-size: 1.1em;
+    }
+    .btn-primary {
+        font-size: 1.05em;
+        padding: .8rem 1.3rem;
+    }
+    footer {
+        padding: 20px 0;
+    }
 }
 
-/* Estilos de navegación de la página principal */
-nav.navbar-dark {
-    background-color: #6c757d !important; /* Color secundario de Bootstrap */
-}
-
-nav ul.nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav li.nav-item {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav a.nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 8px 0;
-    transition: color 0.3s ease;
-}
-
-nav a.nav-link:hover {
-    color: #cfe2ff;
-}
-
-nav .nav-link.active {
-    font-weight: bold;
-    color: #ffffff !important;
-    border-bottom: 2px solid #ffffff;
+@media (max-width: 575.98px) {
+    #map, .map-container {
+        height: 300px;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    header p {
+        font-size: 0.9em;
+    }
+    main {
+        padding: 20px;
+    }
+    .card-body {
+        padding: 20px;
+    }
 }
