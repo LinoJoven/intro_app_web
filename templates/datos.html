@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioGuardian - Nuestros Datos y Proyectos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+             crossorigin=""/>
+             
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+    <header class="main-header py-4">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">
+            <div class="d-flex align-items-center mb-3 mb-md-0">
+                <img src="/static/imagen/logoempresa.png" alt="Logo BioGuardian" class="logo-empresa me-3">
+                <h1 class="site-title mb-0">BIOGUARDIAN</h1>
+            </div>
+            <p class="tagline mb-0 mt-2 mt-md-0">"Protegiendo la vida, informando el futuro."</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#our-mission">Nuestra Misión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="datos.html">Datos y Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addpoint.html">Reportar Avistamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="data-projects" class="py-5 fade-in-section">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Nuestros Datos y el Área de Monitoreo Clave</h2>
+                <div class="row mb-5">
+                    <div class="col-md-8 mx-auto text-center">
+                        <p class="lead">Monitoreamos el Parque Metropolitano Simón Bolívar, un ecosistema vital en el corazón de Bogotá, para entender el impacto de las actividades humanas en su fauna.</p>
+                        <p>A continuación, puedes ver el área delimitada de nuestro principal foco de estudio:</p>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card shadow-lg border-0 rounded-4">
+                            <div class="card-header gradient-bg-green text-center py-3 rounded-top-4">
+                                <h4 class="h5 mb-0 fw-bold">Parque Metropolitano Simón Bolívar - Área de Estudio</h4>
+                            </div>
+                            <div class="card-body p-0">
+                                <div id="map-index" class="map-container-index"></div>
+                            </div>
+                            <div class="card-footer text-muted text-center py-3">
+                                <small>Mapa de referencia del Parque Metropolitano Simón Bolívar, Bogotá.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <p class="lead">Nuestros proyectos se basan en la evidencia científica para impulsar un cambio positivo.</p>
+                        <a href="addpoint.html" class="btn btn-secondary btn-lg custom-btn-secondary">Registrar un Nuevo Avistamiento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fauna-peligro" class="py-5 bg-light-green fade-in-section">
+            <div class="container">
+                <h2 class="section-title mb-5">Fauna del Parque Simón Bolívar: Características y Afectaciones</h2>
+                <p class="text-center lead mb-5">Explora la diversidad de especies que habitan en el parque y comprende cómo los eventos masivos pueden impactar su bienestar.</p>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 animal-card">
+                            <img src="https://via.placeholder.com/400x200/98d8c8/FFFFFF?text=Ave+Ejemplo" class="card-img-top" alt="Ave del Parque">
+                            <div class="card-body">
+                                <h5 class="card-title">Tingua Azul</h5>
+                                <p class="card-text">
+                                    <strong>Especie:</strong> Rallus caerulescens<br>
+                                    <strong>Hábitat:</strong> Zonas húmedas, pantanos, lagos.<br>
+                                    <strong>Alimentación:</strong> Insectos, pequeños invertebrados, semillas.<br>
+                                    <strong>Afectación Común:</strong> Ruido extremo durante conciertos, contaminación del agua por residuos, alteración del ciclo de vida.
+                                </p>
+                                <a href="#" class="btn btn-sm custom-btn-primary mt-3">Ver Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 animal-card">
+                            <img src="https://via.placeholder.com/400x200/a1c4fd/FFFFFF?text=Mamifero+Ejemplo" class="card-img-top" alt="Mamífero del Parque">
+                            <div class="card-body">
+                                <h5 class="card-title">Ardilla de cola roja</h5>
+                                <p class="card-text">
+                                    <strong>Especie:</strong> Sciurus vulgaris<br>
+                                    <strong>Hábitat:</strong> Bosques, zonas arboladas urbanas.<br>
+                                    <strong>Alimentación:</strong> Frutos secos, semillas, brotes.<br>
+                                    <strong>Afectación Común:</strong> Fragmentación de hábitat, estrés por multitudes, atropellos.
+                                </p>
+                                <a href="#" class="btn btn-sm custom-btn-primary mt-3">Ver Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 animal-card">
+                            <img src="https://via.placeholder.com/400x200/ffb677/FFFFFF?text=Anfibio+Ejemplo" class="card-img-top" alt="Anfibio del Parque">
+                            <div class="card-body">
+                                <h5 class="card-title">Rana Sabanera</h5>
+                                <p class="card-text">
+                                    <strong>Especie:</strong> Colostethus subpunctatus<br>
+                                    <strong>Hábitat:</strong> Cuerpos de agua dulce, vegetación densa.<br>
+                                    <strong>Alimentación:</strong> Pequeños insectos, larvas.<br>
+                                    <strong>Afectación Común:</strong> Contaminación química del agua, alteración de ecosistemas acuáticos, pisoteo.
+                                </p>
+                                <a href="#" class="btn btn-sm custom-btn-primary mt-3">Ver Más</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer py-4">
+        <div class="container text-center">
+            <p class="mb-0">BioGuardian © 2025. Todos los derechos reservados.</p>
+            <p class="mb-0 author-info">Desarrollado por: Lino Augusto Joven Galindo</p>
+            <p class="mb-0 author-info">linoaugustojoveng@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script> <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+             crossorigin=""></script>
+             
+    <script src="/static/js/mapa.js"></script>
+
+    <script>
+        // Script simple para añadir la clase 'is-visible' a las secciones
+        // y activar las animaciones fade-in al cargar la página.
+        // Para animaciones al hacer scroll, se necesitaría Intersection Observer API.
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".fade-in-section");
+            sections.forEach(section => {
+                section.classList.add("is-visible");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,251 +1,235 @@
-#map { height: 60%; }
-/* /static/css/estilos.css */
-
-/* Google Fonts - Import Poppins for general text and Montserrat for headings */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
-
-/* Estilos generales del cuerpo de la página */
+/* General */
 body {
-    font-family: 'Poppins', sans-serif; /* Poppins for body text */
-    margin: 0;
-    padding: 0;
-    background-color: #F8F9FA; /* A very light, almost white background */
-    color: #343a40; /* Darker text for better contrast */
-    line-height: 1.8; /* Increased line height for readability */
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-    /* Subtle diagonal line pattern for a modern touch */
-    background-image: linear-gradient(45deg, #f0f2f5 25%, transparent 25%, transparent 75%, #f0f2f5 75%, #f0f2f5),
-                      linear-gradient(45deg, #f0f2f5 25%, transparent 25%, transparent 75%, #f0f2f5 75%, #f0f2f5);
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px;
-}
-
-/* Base styles for all sections for consistent padding and margin */
-section {
-    padding: 60px 0;
-}
-
-/* --- CABECERA (Página Principal) --- */
-header {
-    background-color: #ffffff; /* White header for a clean look */
-    border-bottom: 1px solid #e9ecef; /* Subtle border */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Stronger, softer shadow for depth */
-    position: sticky; /* Sticky header */
-    top: 0;
-    z-index: 1000; /* Ensure header stays on top */
-    transition: all 0.3s ease-in-out;
-}
-
-header .container {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-header h1, header p {
-    font-family: 'Montserrat', sans-serif; /* Montserrat for headings */
-    color: #212529; /* Darker shade for text */
-    margin-bottom: 0;
-}
-
-header h1 {
-    font-weight: 700; /* Bolder title */
-    font-size: 2.2rem;
-}
-
-header p {
-    font-weight: 400;
-    font-size: 1.1rem;
-    color: #6c757d;
-}
-
-.logo-empresa {
-    height: 80px; /* Slightly larger logo */
-    width: auto;
-    display: block;
-    margin-right: 25px; /* More space */
-    border-radius: 50%; /* Make logo round */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for logo */
-}
-
-/* --- Navigation Bar (Both Pages) --- */
-nav.navbar-dark {
-    background-color: #1a4d2e !important; /* Deep Forest Green for navigation */
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 0.8rem 0;
-}
-
-nav a.nav-link {
-    color: #e8f5e9; /* Lighter green-white */
-    font-family: 'Montserrat', sans-serif; /* Montserrat for nav links */
-    font-weight: 500;
-    text-decoration: none;
-    padding: 14px 22px; /* Increased padding */
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* More sophisticated transition */
-    border-radius: 8px;
-    margin: 0 8px; /* Spacing between links */
-    position: relative;
-    overflow: hidden;
-}
-
-nav a.nav-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 0;
-}
-
-nav a.nav-link:hover::before {
-    transform: translateX(0);
-}
-
-nav a.nav-link:hover {
-    color: #ffffff; /* White on hover */
-    transform: translateY(-3px); /* Slight lift effect */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-nav .nav-link.active {
-    font-weight: 700; /* Bolder active link */
-    color: #ffffff !important;
-    background-color: rgba(255, 255, 255, 0.2); /* More pronounced active background */
-    border-bottom: none;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2); /* Inner shadow for active state */
-    transform: translateY(-2px);
-}
-
-/* --- CONTENIDO PRINCIPAL (MAIN) - Index Page --- */
-main {
-    background-color: #ffffff;
-    padding: 50px; /* More padding */
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
-    margin-top: 40px;
-    margin-bottom: 40px;
-    position: relative;
-    overflow: hidden; /* For pseudo-element background */
-}
-
-main::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxIiBmaWxsPSIjRjBGNEY1Ii8+PC9zdmc+');
-    background-repeat: repeat;
-    background-size: 20px 20px;
-    opacity: 0.5;
-    z-index: 0;
-}
-
-main > * { /* Ensure content is above the pseudo-element */
-    position: relative;
-    z-index: 1;
-}
-
-
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 40px auto; /* More vertical space */
-    border-radius: 12px; /* Consistent rounding */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Clearer shadow */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.img-fluid:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-main p {
-    font-size: 1.1em; /* Slightly larger text */
-    color: #495057; /* Slightly lighter body text */
-    text-align: justify; /* Justify text for a cleaner look */
-}
-
-small.text-muted {
-    font-style: italic;
-    color: #888 !important;
-    display: block;
-    text-align: center;
-    margin-top: -20px; /* Pull it up slightly closer to the image */
-    font-size: 0.9em;
-}
-
-/* --- FOOTER --- */
-footer {
-    background-color: #212529; /* Darker footer */
-    color: #e0e0e0; /* Lighter text */
-    font-size: 0.9em;
-    padding: 30px 0; /* More padding */
-    border-top: 1px solid #343a40;
-    margin-top: 50px;
-    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
-}
-
-footer p {
-    margin-bottom: 5px;
     font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8fbfd; /* Fondo ligero */
+    overflow-x: hidden; /* Evitar scroll horizontal por animaciones */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2c3e50; /* Azul oscuro para títulos */
+}
+
+p {
     font-weight: 300;
 }
 
-footer .author-info {
-    font-size: 0.85em;
-    color: #b0b0b0;
-    margin-top: 10px;
+/* Custom Colors and Buttons */
+.bg-light-green {
+    background-color: #e6f7e8; /* Verde muy claro, casi blanco verdoso */
+}
+
+.bg-dark-blue {
+    background-color: #2c3e50; /* Azul oscuro para secciones */
+}
+
+/* Gradientes */
+.gradient-bg-green {
+    background: linear-gradient(to right, #2e7d32, #1a5e22); /* Verde de BioGuardian a uno más oscuro */
+    color: white;
+}
+
+.gradient-text-green {
+    background: linear-gradient(to right, #2e7d32, #1a5e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 
-/* --- CABECERA (página de registro - addpoint.html) --- */
-header.bg-primary {
-    background-color: #1a4d2e !important; /* Deep Forest Green for register page header */
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    padding: 20px 0;
+/* Botones con transiciones */
+.custom-btn-primary {
+    background-color: #2e7d32; /* Verde BioGuardian */
+    border-color: #2e7d32;
+    transition: all 0.4s ease-in-out; /* Transición más suave */
+    box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3); /* Sombra suave */
 }
 
-header.bg-primary h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 1.8rem;
+.custom-btn-primary:hover {
+    background-color: #1a5e22; /* Verde más oscuro al pasar el ratón */
+    border-color: #1a5e22;
+    transform: translateY(-3px); /* Pequeño levantamiento */
+    box-shadow: 0 8px 16px rgba(46, 125, 50, 0.4); /* Sombra más grande */
 }
 
-header .btn-outline-light {
-    border-color: #ffffff;
-    color: #ffffff;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    padding: 8px 18px;
-    border-radius: 6px;
+.custom-btn-secondary {
+    background-color: #3498db; /* Azul de acento */
+    border-color: #3498db;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
 }
 
-header .btn-outline-light:hover {
-    background-color: #ffffff;
-    color: #1a4d2e; /* Teal on hover */
-    transform: translateY(-2px);
+.custom-btn-secondary:hover {
+    background-color: #217dbb;
+    border-color: #217dbb;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(52, 152, 219, 0.4);
 }
 
-/* --- MAIN (Contenido principal de la página de registro) --- */
-main.container {
-    background-color: transparent; /* The main container itself remains transparent */
-    padding: 40px 0; /* Increased vertical padding */
+
+/* Header Principal */
+.main-header {
+    background-color: #ffffff; /* Blanco limpio */
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Estilos para el contenedor del mapa */
-#map {
-    height: 550px; /* Increased map height for better visibility */
+.logo-empresa {
+    height: 70px; /* Tamaño más grande para el logo */
+    width: auto;
+}
+
+.site-title {
+    color: #2e7d32; /* Verde del logo */
+    font-weight: 700;
+    font-size: 2.5rem; /* Título más grande */
+}
+
+.tagline {
+    color: #6c757d;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Barra de Navegación */
+.navbar {
+    background-color: #2c3e50 !important; /* Azul oscuro fuerte para la barra */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-link {
+    color: #ecf0f1 !important; /* Texto claro */
+    padding: 0.8rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease; /* Transición para color y fondo */
+    border-radius: 5px;
+    margin: 0 5px; /* Espacio entre los elementos de la nav */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    background-color: #3498db; /* Azul de acento al pasar el ratón o activo */
+    transform: translateY(-2px); /* Ligerísimo levantamiento */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to bottom, rgba(46, 125, 50, 0.7), rgba(26, 94, 34, 0.7)), url('/static/imagen/FOTO LAUD PARQUE SIMON BOLIVAR.jpeg') no-repeat center center/cover;
+    height: 550px; /* Altura generosa */
+    padding: 100px 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex; /* Para centrar el contenido verticalmente */
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Para la animación de entrada */
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-section .display-4 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-section .lead {
+    font-size: 1.3rem;
+}
+
+/* Secciones Generales */
+section {
+    position: relative; /* Para las animaciones de entrada */
+    /* opacity: 0; */ /* Se controlará con JS si quieres animaciones on-scroll */
+    /* transform: translateY(20px); */
+    /* transition: opacity 0.6s ease-out, transform 0.6s ease-out; */
+}
+
+/* Clases para animación de entrada simple al cargar la página */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Cuando se añade la clase .is-visible (podría ser por JS) */
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.section-title {
+    font-size: 2.5rem;
+    color: #2e7d32; /* Verde principal para títulos de sección */
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 10px;
+    animation: fadeInDown 0.8s ease-out; /* Animación para títulos */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3498db; /* Azul de acento */
+    border-radius: 2px;
+}
+
+/* Imagen con sombra en "Nuestra Misión" */
+.section-image-shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+/* Estilos de Card para el mapa (y otros elementos si los usas) */
+.card {
+    border: none;
+    transition: all 0.4s ease-in-out; /* Transición más general para cards */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra por defecto */
+    border-radius: 15px !important; /* Asegurar bordes redondeados */
+    overflow: hidden; /* Para que la imagen o mapa no se desborde */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Sombra más grande al pasar el ratón */
+}
+
+.card-header.bg-success {
+    background-color: #2e7d32 !important; /* Verde BioGuardian para encabezado de mapa */
+    color: white;
+}
+.card-header.bg-info {
+    background-color: #3498db !important; /* Azul de acento para otros encabezados de card */
+    color: white;
+}
+
+/* Mapa específico del Index y Datos */
+#map-index {
+    height: 480px; /* Altura ajustada para que se vea bien dentro de la tarjeta */
     width: 100%;
-    border-radius: 15px; /* More rounded map corners */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Clearer shadow */
-    border: 2px solid #e0f2f7; /* Subtle border around map */
+}
+
+.map-container-index {
+    overflow: hidden;
+}
+
+/* Mapa en addpoint.html */
+#map { 
+    height: 480px; /* Ajustamos la altura para que sea consistente */
+    width: 100%;
+    border-radius: 15px; /* Para que los bordes del mapa sean redondeados */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 2px solid #e0f2f7;
     transition: all 0.3s ease-in-out;
 }
 
@@ -254,192 +238,143 @@ main.container {
 }
 
 .map-container {
-    height: 550px; /* Match map height */
+    height: 100%; /* El contenedor debe tener altura para que el mapa se estire */
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 15px; /* Para que los bordes del mapa sean redondeados */
 }
 
-/* Estilos para los "cards" de Bootstrap */
-.card {
-    border: none;
-    border-radius: 15px; /* More rounded card corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Consistent, softer shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
-    overflow: hidden; /* For internal elements if any */
+/* Estilos para las tarjetas de animales en datos.html */
+.animal-card {
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Borde suave */
 }
 
-.card:hover {
-    transform: translateY(-5px); /* More pronounced lift on hover */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+.animal-card:hover {
+    transform: translateY(-7px) scale(1.02); /* Efecto más pronunciado al pasar el ratón */
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
 }
 
-.card-header {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 1.3em; /* Slightly larger header text */
+.animal-card .card-img-top {
+    height: 200px; /* Altura fija para las imágenes de animales */
+    object-fit: cover; /* Recortar la imagen para que encaje */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    padding: 18px 25px; /* More padding */
-    position: relative; /* For potential background effects */
-    overflow: hidden;
 }
 
-.card-header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
-    pointer-events: none; /* Allows clicks to pass through */
+.animal-card .card-body {
+    padding: 1.5rem;
 }
 
-
-.card-header.bg-info {
-    background-color: #2e7d32 !important; /* Slightly lighter Forest Green for map card header */
-    color: #ffffff;
+.animal-card .card-title {
+    font-size: 1.5rem;
+    color: #2e7d32; /* Título de la tarjeta en verde */
+    margin-bottom: 0.75rem;
 }
 
-.card-header.bg-success {
-    background-color: #1a4d2e !important; /* Deep Forest Green for form card header */
-    color: #ffffff;
+.animal-card .card-text strong {
+    color: #3498db; /* Etiquetas de características en azul */
 }
 
-.card-body {
-    padding: 30px; /* More padding inside card body */
+/* Footer */
+.site-footer {
+    background-color: #34495e; /* Azul grisáceo oscuro */
+    color: #ecf0f1;
+    padding: 2.5rem 0;
+    font-size: 0.9rem;
 }
 
-
-/* Estilos para los formularios */
-.form-label {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: #343a40; /* Darker label color */
-    margin-bottom: .6rem; /* More space below label */
-    display: block; /* Ensure label takes full width */
+.author-info {
+    color: #bdc3c7;
+    margin-top: 5px;
 }
 
-.form-control {
-    border-radius: 10px; /* More rounded input fields */
-    border: 1px solid #ced4da;
-    padding: .85rem 1.1rem; /* More padding inside inputs */
-    font-size: 1.05em;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    background-color: #f8f9fa; /* Light background for inputs */
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.form-control:focus {
-    border-color: #1a4d2e; /* Deep Forest Green focus border */
-    box-shadow: 0 0 0 0.25rem rgba(26, 77, 46, 0.3); /* Deep Forest Green focus shadow */
-    background-color: #ffffff;
-}
-
-.btn-primary {
-    background-color: #1a4d2e; /* Deep Forest Green button */
-    border-color: #1a4d2e;
-    padding: .9rem 1.5rem; /* Larger button padding */
-    font-size: 1.2em;
-    border-radius: 10px; /* Rounded button */
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary:hover {
-    background-color: #0f331d; /* Darker Forest Green on hover */
-    border-color: #0f331d;
-    transform: translateY(-3px); /* Slight lift on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    main {
-        padding: 40px;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    #map, .map-container {
-        height: 500px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 991.98px) {
-    #map, .map-container {
-        height: 450px; /* Slightly reduce map height on smaller screens */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    main {
-        padding: 30px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    header h1 {
-        font-size: 1.8rem;
-    }
-    header p {
-        font-size: 1em;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 2rem;
     }
     .logo-empresa {
         height: 60px;
     }
-    .card-header {
-        font-size: 1.2em;
+    .tagline {
+        font-size: 0.9rem;
     }
-    .card-body {
-        padding: 25px;
+    .hero-section {
+        height: 400px;
+        padding: 50px 0;
+    }
+    .hero-section .display-4 {
+        font-size: 2.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    #map-index, #map {
+        height: 350px; /* Reducir altura en móviles */
+    }
+    .animal-card .card-img-top {
+        height: 180px;
     }
 }
 
-@media (max-width: 767.98px) {
-    #map, .map-container {
-        height: 400px; /* Further reduce map height on small screens */
-    }
-    header .container {
+@media (max-width: 576px) {
+    .main-header .container {
         flex-direction: column;
-        text-align: center;
     }
     .logo-empresa {
-        margin-right: 0;
-        margin-bottom: 15px;
+        margin-right: 0 !important; /* Eliminar margen en móviles */
+        margin-bottom: 10px;
     }
-    nav .navbar-nav {
+    .site-title {
         text-align: center;
     }
-    nav a.nav-link {
-        margin: 5px auto;
+    .tagline {
+        text-align: center;
+        margin-top: 10px !important;
     }
-    main {
-        padding: 25px;
-        margin-top: 25px;
-        margin-bottom: 25px;
+    .navbar-nav {
+        text-align: center;
     }
-    .img-fluid {
-        margin: 30px auto;
+    .navbar-nav .nav-item {
+        width: 100%;
     }
-    .card-header {
-        font-size: 1.1em;
+    .hero-section {
+        height: 300px; /* Aún más pequeña en pantallas muy pequeñas */
     }
-    .btn-primary {
-        font-size: 1.05em;
-        padding: .8rem 1.3rem;
-    }
-    footer {
-        padding: 20px 0;
-    }
-}
-
-@media (max-width: 575.98px) {
-    #map, .map-container {
-        height: 300px;
-    }
-    header h1 {
-        font-size: 1.6rem;
-    }
-    header p {
-        font-size: 0.9em;
-    }
-    main {
-        padding: 20px;
-    }
-    .card-body {
-        padding: 20px;
+    .hero-section .display-4 {
+        font-size: 2rem;
     }
 }
