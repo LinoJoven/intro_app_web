@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioGuardian - Nuestros Datos y Proyectos</title>
-    
+    <title>BioGuardian - Datos y Proyectos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
              integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
              crossorigin=""/>
-             
     <link rel="stylesheet" href="/static/css/estilos.css">
 </head>
 <body>
@@ -37,16 +33,13 @@
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#our-mission">Nuestra Misión</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="datos.html">Datos y Proyectos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="addpoint.html">Reportar Avistamiento</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contacto</a>
+                        <a class="nav-link" href="#contact">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -54,36 +47,22 @@
     </nav>
 
     <main>
-        <section id="data-projects" class="py-5 fade-in-section">
+        <section id="data-intro" class="py-5 bg-light-green fade-in-section">
             <div class="container">
-                <h2 class="section-title text-center mb-5">Nuestros Datos y el Área de Monitoreo Clave</h2>
-                <div class="row mb-5">
-                    <div class="col-md-8 mx-auto text-center">
-                        <p class="lead">Monitoreamos el Parque Metropolitano Simón Bolívar, un ecosistema vital en el corazón de Bogotá, para entender el impacto de las actividades humanas en su fauna.</p>
-                        <p>A continuación, puedes ver el área delimitada de nuestro principal foco de estudio:</p>
-                    </div>
-                </div>
-                
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="card shadow-lg border-0 rounded-4">
-                            <div class="card-header gradient-bg-green text-center py-3 rounded-top-4">
-                                <h4 class="h5 mb-0 fw-bold">Parque Metropolitano Simón Bolívar - Área de Estudio</h4>
-                            </div>
-                            <div class="card-body p-0">
-                                <div id="map-index" class="map-container-index"></div>
-                            </div>
-                            <div class="card-footer text-muted text-center py-3">
-                                <small>Mapa de referencia del Parque Metropolitano Simón Bolívar, Bogotá.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="section-title text-center mb-4">Explora Nuestros Datos y Proyectos</h2>
+                <p class="lead text-center mb-5">Aquí puedes ver los hallazgos de nuestros estudios, el área de enfoque en el Parque Simón Bolívar y la fauna más afectada.</p>
+            </div>
+        </section>
 
-                <div class="row mt-5">
-                    <div class="col-12 text-center">
-                        <p class="lead">Nuestros proyectos se basan en la evidencia científica para impulsar un cambio positivo.</p>
-                        <a href="addpoint.html" class="btn btn-secondary btn-lg custom-btn-secondary">Registrar un Nuevo Avistamiento</a>
+        <section id="area-map" class="py-5 fade-in-section">
+            <div class="container">
+                <div class="card shadow-lg">
+                    <div class="card-header gradient-bg-green text-center py-3">
+                        <h3 class="mb-0">Área de Estudio y Ubicación de Avistamientos</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="lead text-center mb-4">A continuación, puedes ver el área delimitada de nuestro principal foco de estudio y ubicación aproximada de los animales:</p>
+                        <div id="map-index" class="map-container-index rounded"></div>
                     </div>
                 </div>
             </div>
@@ -91,58 +70,180 @@
 
         <section id="fauna-peligro" class="py-5 bg-light-green fade-in-section">
             <div class="container">
-                <h2 class="section-title mb-5">Fauna del Parque Simón Bolívar: Características y Afectaciones</h2>
-                <p class="text-center lead mb-5">Explora la diversidad de especies que habitan en el parque y comprende cómo los eventos masivos pueden impactar su bienestar.</p>
-
+                <h2 class="section-title text-center mb-5">Fauna Residente y Más Afectada</h2>
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    
                     <div class="col">
-                        <div class="card h-100 animal-card">
-                            <img src="https://via.placeholder.com/400x200/98d8c8/FFFFFF?text=Ave+Ejemplo" class="card-img-top" alt="Ave del Parque">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/1.jpeg" class="card-img-top" alt="Mirla Grande">
                             <div class="card-body">
-                                <h5 class="card-title">Tingua Azul</h5>
-                                <p class="card-text">
-                                    <strong>Especie:</strong> Rallus caerulescens<br>
-                                    <strong>Hábitat:</strong> Zonas húmedas, pantanos, lagos.<br>
-                                    <strong>Alimentación:</strong> Insectos, pequeños invertebrados, semillas.<br>
-                                    <strong>Afectación Común:</strong> Ruido extremo durante conciertos, contaminación del agua por residuos, alteración del ciclo de vida.
-                                </p>
-                                <a href="#" class="btn btn-sm custom-btn-primary mt-3">Ver Más</a>
+                                <h5 class="card-title">Mirla Grande</h5>
+                                <p class="card-text"><strong>ID:</strong> A001</p>
+                                <p class="card-text"><strong>Especie:</strong> *Turdus fuscater*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Abundante</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Parques, jardines, zonas arboladas, áreas urbanas.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Omnívora; frutas, insectos, lombrices, semillas.</p>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col">
-                        <div class="card h-100 animal-card">
-                            <img src="https://via.placeholder.com/400x200/a1c4fd/FFFFFF?text=Mamifero+Ejemplo" class="card-img-top" alt="Mamífero del Parque">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/2.jpeg" class="card-img-top" alt="Zambullidor Piquipinto">
                             <div class="card-body">
-                                <h5 class="card-title">Ardilla de cola roja</h5>
-                                <p class="card-text">
-                                    <strong>Especie:</strong> Sciurus vulgaris<br>
-                                    <strong>Hábitat:</strong> Bosques, zonas arboladas urbanas.<br>
-                                    <strong>Alimentación:</strong> Frutos secos, semillas, brotes.<br>
-                                    <strong>Afectación Común:</strong> Fragmentación de hábitat, estrés por multitudes, atropellos.
-                                </p>
-                                <a href="#" class="btn btn-sm custom-btn-primary mt-3">Ver Más</a>
+                                <h5 class="card-title">Zambullidor Piquipinto</h5>
+                                <p class="card-text"><strong>ID:</strong> A002</p>
+                                <p class="card-text"><strong>Especie:</strong> *Podilymbus podiceps*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Frecuente</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Lagos, lagunas, humedales con vegetación flotante y emergente.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Pequeños peces, insectos acuáticos, crustáceos.</p>
                             </div>
                         </div>
                     </div>
+
                     <div class="col">
-                        <div class="card h-100 animal-card">
-                            <img src="https://via.placeholder.com/400x200/ffb677/FFFFFF?text=Anfibio+Ejemplo" class="card-img-top" alt="Anfibio del Parque">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/3.jpeg" class="card-img-top" alt="Pibí Oriental">
                             <div class="card-body">
-                                <h5 class="card-title">Rana Sabanera</h5>
-                                <p class="card-text">
-                                    <strong>Especie:</strong> Colostethus subpunctatus<br>
-                                    <strong>Hábitat:</strong> Cuerpos de agua dulce, vegetación densa.<br>
-                                    <strong>Alimentación:</strong> Pequeños insectos, larvas.<br>
-                                    <strong>Afectación Común:</strong> Contaminación química del agua, alteración de ecosistemas acuáticos, pisoteo.
-                                </p>
-                                <a href="#" class="btn btn-sm custom-btn-primary mt-3">Ver Más</a>
+                                <h5 class="card-title">Pibí Oriental</h5>
+                                <p class="card-text"><strong>ID:</strong> A003</p>
+                                <p class="card-text"><strong>Especie:</strong> *Contopus virens*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Moderada</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Bosques, arboledas, parques con árboles altos.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Insectos voladores (cazados al vuelo).</p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/4.jpeg" class="card-img-top" alt="Reinita Amarilla">
+                            <div class="card-body">
+                                <h5 class="card-title">Reinita Amarilla</h5>
+                                <p class="card-text"><strong>ID:</strong> A004</p>
+                                <p class="card-text"><strong>Especie:</strong> *Setophaga petechia*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Común</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Arbustos, árboles bajos, zonas ribereñas, jardines.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Insectos, orugas, arañas, ocasionalmente bayas.</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/5.jpeg" class="card-img-top" alt="Pinchaflor Negro">
+                            <div class="card-body">
+                                <h5 class="card-title">Pinchaflor Negro</h5>
+                                <p class="card-text"><strong>ID:</strong> A005</p>
+                                <p class="card-text"><strong>Especie:</strong> *Diglossa humeralis*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Moderada</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Zonas boscosas, arbustales, bordes de bosque, jardines con flores.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Néctar (perforando flores), insectos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/6.jpeg" class="card-img-top" alt="Piranga Roja">
+                            <div class="card-body">
+                                <h5 class="card-title">Piranga Roja</h5>
+                                <p class="card-text"><strong>ID:</strong> A006</p>
+                                <p class="card-text"><strong>Especie:</strong> *Piranga rubra*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Ocasional</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Bosques caducifolios, arboledas, parques con árboles grandes.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Insectos (especialmente orugas), bayas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/7.jpeg" class="card-img-top" alt="Gavilán Caminero">
+                            <div class="card-body">
+                                <h5 class="card-title">Gavilán Caminero</h5>
+                                <p class="card-text"><strong>ID:</strong> A007</p>
+                                <p class="card-text"><strong>Especie:</strong> *Rupornis magnirostris*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Frecuente</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Áreas abiertas con árboles dispersos, zonas urbanas, bordes de bosque.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Insectos grandes, roedores, lagartos, pequeñas aves.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/8.jpeg" class="card-img-top" alt="Jilguero Andino">
+                            <div class="card-body">
+                                <h5 class="card-title">Jilguero Andino</h5>
+                                <p class="card-text"><strong>ID:</strong> A008</p>
+                                <p class="card-text"><strong>Especie:</strong> *Spinus spinescens*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Común</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Zonas abiertas con arbustos, pastizales, bordes de cultivo.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Semillas (especialmente de cardos y girasoles).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/9.jpeg" class="card-img-top" alt="Tirano Norteño">
+                            <div class="card-body">
+                                <h5 class="card-title">Tirano Norteño</h5>
+                                <p class="card-text"><strong>ID:</strong> A009</p>
+                                <p class="card-text"><strong>Especie:</strong> *Tyrannus tyrannus*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Ocasional (migratorio)</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Áreas abiertas con árboles altos, granjas, parques.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Insectos voladores (cazados al vuelo).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/10.jpeg" class="card-img-top" alt="Vireo Ojirrojo">
+                            <div class="card-body">
+                                <h5 class="card-title">Vireo Ojirrojo</h5>
+                                <p class="card-text"><strong>ID:</strong> A010</p>
+                                <p class="card-text"><strong>Especie:</strong> *Vireo olivaceus*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Ocasional (migratorio)</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Bosques caducifolios, arboledas, parques.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Insectos, orugas, arañas, algunas bayas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card animal-card h-100">
+                            <img src="/static/imagen/11.jpeg" class="card-img-top" alt="Carpa">
+                            <div class="card-body">
+                                <h5 class="card-title">Carpa</h5>
+                                <p class="card-text"><strong>ID:</strong> P001</p>
+                                <p class="card-text"><strong>Especie:</strong> *Cyprinus carpio*</p>
+                                <p class="card-text"><strong>Cantidad estimada:</strong> Abundante</p>
+                                <p class="card-text"><strong>Hábitat:</strong> Lagos, estanques, ríos de aguas lentas.</p>
+                                <p class="card-text"><strong>Alimentación:</strong> Omnívora; vegetación acuática, insectos, larvas, pequeños crustáceos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <p class="lead">Además de estas especies destacadas, el Parque Metropolitano Simón Bolívar alberga una diversidad de fauna, incluyendo otras aves y pequeños mamíferos. La presencia de árboles y plantas nativas contribuye a la riqueza de su ecosistema.</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <section id="contact" class="py-5 bg-dark-blue text-white fade-in-section">
+            <div class="container text-center">
+                <h3 class="section-title text-white mb-4">Contáctanos</h3>
+                <p class="lead mb-4">¿Tienes preguntas, quieres colaborar o reportar algo? ¡Estamos aquí para ayudarte!</p>
+                <p><i class="fas fa-envelope me-2"></i>Email: linoaugustojoveng@gmail.com</p>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer py-4">
@@ -153,18 +254,15 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script> <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-..." crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
              integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
              crossorigin=""></script>
-             
     <script src="/static/js/mapa.js"></script>
 
     <script>
         // Script simple para añadir la clase 'is-visible' a las secciones
-        // y activar las animaciones fade-in al cargar la página.
-        // Para animaciones al hacer scroll, se necesitaría Intersection Observer API.
         document.addEventListener("DOMContentLoaded", function() {
             const sections = document.querySelectorAll(".fade-in-section");
             sections.forEach(section => {
